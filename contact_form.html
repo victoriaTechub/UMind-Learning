@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Request Form</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            background-color: white;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color:gray;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Request a Consultation</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="process_consultation.php" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company">
+
+                <label for="service">Service Interested In:</label>
+                <select id="service" name="service">
+                    <option value="data-analysis">Data Analysis and Visualization</option>
+                    <option value="training-workshops">Training and Workshops</option>
+                    <option value="consultation-services">Consultation Services</option>
+                    <option value="technology-implementation">Technology Implementation</option>
+                    <option value="ongoing-support">Ongoing Support</option>
+                    <option value="advanced-analytics">Advanced Analytics</option>
+                </select>
+
+                <label for="details">Additional Details:</label>
+                <textarea id="details" name="details" placeholder="Describe your consultation needs here..."></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

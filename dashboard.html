@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 15px;
+        }
+
+        nav a {
+            color: red;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .module {
+            margin: 15px 0;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+
+        .module-header {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .module-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid red;
+            text-align: left;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo"> <!-- Add the path to your logo image here -->
+        <h1>Student Dashboard</h1>
+    </header>
+    <main>
+        <h2>Course Modules</h2>
+        
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module1')">1. Excel Basics and Data Management</div>
+            <div class="module-content" id="module1">
+                <ul>
+                    <li>Spreadsheet navigation, formatting, and formulas.</li>
+                    <li>Basic data management: filtering, sorting, and basic functions (SUM, AVERAGE, COUNT).</li>
+                    <li>Introduction to data validation and pivot tables.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module2')">2. Advanced Excel for Data Analysis</div>
+            <div class="module-content" id="module2">
+                <ul>
+                    <li>Advanced formulas and functions (IF, VLOOKUP, INDEX, MATCH).</li>
+                    <li>Data analysis with Excel’s Analysis ToolPak.</li>
+                    <li>Creating and using pivot tables and pivot charts for data summarization.</li>
+                    <li>Introduction to Excel macros for automation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module3')">3. Power BI Fundamentals</div>
+            <div class="module-content" id="module3">
+                <ul>
+                    <li>Overview of Power BI and connecting data sources.</li>
+                    <li>Data transformation with Power Query.</li>
+                    <li>Creating visualizations and understanding data modeling.</li>
+                    <li>Building interactive dashboards.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module4')">4. Advanced Power BI & Data Visualization Techniques</div>
+            <div class="module-content" id="module4">
+                <ul>
+                    <li>DAX (Data Analysis Expressions) for calculations.</li>
+                    <li>Advanced visualizations, using Power BI’s custom visuals.</li>
+                    <li>Publishing reports and sharing dashboards.</li>
+                    <li>Data security and governance within Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module5')">5. Data Management and Collaboration with SharePoint</div>
+            <div class="module-content" id="module5">
+                <ul>
+                    <li>Overview of SharePoint for data management and document storage.</li>
+                    <li>Setting up and managing libraries, lists, and permissions.</li>
+                    <li>Integrating SharePoint with Excel and Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module6')">6. Data Collection and Forms with Microsoft Forms</div>
+            <div class="module-content" id="module6">
+                <ul>
+                    <li>Creating surveys, quizzes, and forms for data collection.</li>
+                    <li>Analyzing collected data in Excel and Power BI.</li>
+                    <li>Integrating Microsoft Forms with Power Automate for workflows.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Tutorial Videos</h2>
+        <p>Only available for Premium Students.</p>
+        <ul>
+            <li><a href="#" onclick="checkPremium()">Excel Functions and Formulas (Premium)</a></li>
+            <li><a href="#" onclick="checkPremium()">Creating Dashboards in Power BI (Premium)</a></li>
+        </ul>
+    </main>
+
+    <script>
+        function toggleModule(moduleId) {
+            const moduleContent = document.getElementById(moduleId);
+            moduleContent.style.display = moduleContent.style.display === "block" ? "none" : "block";
+        }
+
+        function checkPremium() {
+            alert("This feature is available for premium students only. Please upgrade.");
+        }
+    </script>
+</body>
+</html>

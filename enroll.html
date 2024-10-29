@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: red;
+            padding: 15px 0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            height: 100px; /* Adjust logo size */
+            margin-right: 15px;
+        }
+
+        main {
+            max-width: 800px; /* Increased width for better text visibility */
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: purple;
+            margin-top: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: red;
+        }
+
+        button {
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            main {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            select {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Business Logo">
+        <h1>Enroll as a Student</h1>
+    </header>
+    <main>
+        <h2>Importance of the Course</h2>
+        <p>In today’s data-driven world, proficiency in tools like Excel, Power BI, and SharePoint is essential for individuals and organizations looking to thrive. This course offers a comprehensive foundation in data management and analysis, equipping participants with the skills needed to make informed decisions based on accurate data interpretation.</p>
+
+        <h2>Why You Should Enroll</h2>
+        <ul>
+            <li><strong>Enhanced Career Opportunities:</strong> Knowledge of data tools is increasingly sought after across industries. Mastering these applications can significantly improve your employability and career prospects.</li>
+            <li><strong>Improved Decision-Making Skills:</strong> By learning how to analyze and visualize data effectively, you will be able to make data-driven decisions that can lead to better outcomes for your organization.</li>
+            <li><strong>Increased Efficiency:</strong> The course covers automation and advanced features in Excel and Power BI, enabling you to work smarter and faster, ultimately saving time and reducing errors.</li>
+            <li><strong>Collaboration and Integration:</strong> Understanding how to use SharePoint and Microsoft Forms facilitates seamless collaboration and data collection within teams, fostering a more efficient work environment.</li>
+            <li><strong>Practical Applications:</strong> This course emphasizes real-world applications, ensuring that participants can immediately apply their skills to their jobs or projects, increasing the value they bring to their organizations.</li>
+            <li><strong>Continuous Learning:</strong> The skills acquired in this course lay the groundwork for more advanced training in data analysis and visualization, paving the way for ongoing professional development.</li>
+        </ul>
+        
+        <p>In summary, this course is not just about learning software; it's about acquiring essential skills that will empower you in your career and enhance your ability to contribute to your organization's success in an increasingly data-centric landscape. Enroll today and take the first step towards mastering these vital tools!</p>
+
+        <form action="../process_enrollment.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="excel">Excel Basics</option>
+                <option value="powerbi">Power BI Fundamentals</option>
+                <option value="sharepoint">SharePoint Basics</option>
+            </select>
+
+            <button type="submit">Enroll Now</button>
+        </form>
+    </main>
+</body>
+</html>
