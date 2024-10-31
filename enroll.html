@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Enrollment</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
 
     <style>
         /* Global Styles */
@@ -19,33 +20,42 @@
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Space items apart */
+            justify-content: space-between;
             background-color: white;
             color: red;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
+            gap: 15px;
         }
 
         header img {
-            height: 100px; /* Adjust logo size */
-            margin-right: 15px;
+            height: 100px; /* Logo size */
         }
 
         header h1 {
-            flex-grow: 1;
             margin: 0;
+            font-size: 17px; /* Adjusted font size */
+            color: red;
         }
 
         header a {
             color: red;
             text-decoration: none;
             font-weight: bold;
-            margin-left: 20px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        header .home-icon {
+            font-size: 20px; /* Adjust icon size */
+            color: red;
         }
 
         main {
-            max-width: 800px; /* Increased width for better text visibility */
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             padding: 20px;
@@ -127,9 +137,9 @@
 </head>
 <body>
     <header>
+        <a href="index.html"><i class="fas fa-home home-icon"></i> Home</a> <!-- Home Icon Link -->
         <img src="logo.png" alt="Business Logo">
-        <h1>Enroll as a Student</h1>
-        <a href="dashboard.html">Course Modules</a> <!-- Added Course Modules link -->
+        <a href="dashboard.html">Course Modules</a>
     </header>
     <main>
         <h2>Importance of the Course</h2>
