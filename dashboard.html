@@ -1,84 +1,196 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analysis Tutoring</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional Styles for Hero Section */
-        .hero {
-            background-color: #ffefc1;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 24px;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            color: #8a6d3b;
+            padding: 0;
+            color: #333;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin: 10px 0 20px;
+        header {
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: purple;
         }
 
-        .hero .hero-button {
-            padding: 10px 20px;
-            background-color: #8a6d3b;
-            color: #fff;
-            border-radius: 5px;
+        h1{
+            font-size: 17px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-left img.logo {
+            width: 100px;
+            height: auto;
+        }
+
+        .header-left img.home-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        nav a {
+            color: red;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+            margin: 0 15px;
         }
 
-        .hero .hero-button:hover {
-            background-color: #71562b;
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .module {
+            margin: 15px 0;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+
+        .module-header {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .module-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid red;
+            text-align: left;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="logo.png" alt="Logo" class="logo"> <!-- Replace with the actual path to the logo image -->
-            <nav>
-                <a href="enroll.html">Student</a>
-                <a href="business_overview.html">Business</a>
-            </nav>
+        <div class="header-left">
+            <a href="index.html">
+                <img src="home.png" alt="Home Icon" class="home-icon">
+            </a>
+            <img src="logo.png" alt="Business Portal Logo" class="logo">
         </div>
+        <h1>Student Dashboard</h1>
     </header>
-
     <main>
-        <!-- Hero Section with Course Alert -->
-        <div class="hero">
-            <h2>Exciting New Course Alert!</h2>
-            <p>Sign up for our advanced Data Analysis course designed to boost your skills with Microsoft 365. Limited spots are available!</p>
-            <a href="enroll.html" class="hero-button">Enroll Now</a>
+        <h2>Course Modules</h2>
+        
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module1')">1. Excel Basics and Data Management</div>
+            <div class="module-content" id="module1">
+                <ul>
+                    <li>Spreadsheet navigation, formatting, and formulas.</li>
+                    <li>Basic data management: filtering, sorting, and basic functions (SUM, AVERAGE, COUNT).</li>
+                    <li>Introduction to data validation and pivot tables.</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Main Section Content -->
-        <section>
-            <h2>Welcome to Our Tutoring Services</h2>
-            <p>Specialized data analysis courses for students and small businesses using Microsoft 365.</p>
-            <div class="buttons">
-                <a href="services.html" class="button">Our Services to Businesses</a>
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module2')">2. Advanced Excel for Data Analysis</div>
+            <div class="module-content" id="module2">
+                <ul>
+                    <li>Advanced formulas and functions (IF, VLOOKUP, INDEX, MATCH).</li>
+                    <li>Data analysis with Excel’s Analysis ToolPak.</li>
+                    <li>Creating and using pivot tables and pivot charts for data summarization.</li>
+                    <li>Introduction to Excel macros for automation.</li>
+                </ul>
             </div>
-        </section>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module3')">3. Power BI Fundamentals</div>
+            <div class="module-content" id="module3">
+                <ul>
+                    <li>Overview of Power BI and connecting data sources.</li>
+                    <li>Data transformation with Power Query.</li>
+                    <li>Creating visualizations and understanding data modeling.</li>
+                    <li>Building interactive dashboards.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module4')">4. Advanced Power BI & Data Visualization Techniques</div>
+            <div class="module-content" id="module4">
+                <ul>
+                    <li>DAX (Data Analysis Expressions) for calculations.</li>
+                    <li>Advanced visualizations, using Power BI’s custom visuals.</li>
+                    <li>Publishing reports and sharing dashboards.</li>
+                    <li>Data security and governance within Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module5')">5. Data Management and Collaboration with SharePoint</div>
+            <div class="module-content" id="module5">
+                <ul>
+                    <li>Overview of SharePoint for data management and document storage.</li>
+                    <li>Setting up and managing libraries, lists, and permissions.</li>
+                    <li>Integrating SharePoint with Excel and Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module6')">6. Data Collection and Forms with Microsoft Forms</div>
+            <div class="module-content" id="module6">
+                <ul>
+                    <li>Creating surveys, quizzes, and forms for data collection.</li>
+                    <li>Analyzing collected data in Excel and Power BI.</li>
+                    <li>Integrating Microsoft Forms with Power Automate for workflows.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Tutorial Videos</h2>
+        <p>Only available for Premium Students.</p>
+        <ul>
+            <li><a href="#" onclick="checkPremium()">Excel Functions and Formulas (Premium)</a></li>
+            <li><a href="#" onclick="checkPremium()">Creating Dashboards in Power BI (Premium)</a></li>
+        </ul>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Data Analysis Tutoring</p>
-        <nav>
-            <a href="privacy_policy.html">Privacy Policy</a>
-            <a href="terms_of_service.html">Terms of Service</a>
-        </nav>
-    </footer>
+    <script>
+        function toggleModule(moduleId) {
+            const moduleContent = document.getElementById(moduleId);
+            moduleContent.style.display = moduleContent.style.display === "block" ? "none" : "block";
+        }
+
+        function checkPremium() {
+            alert("This feature is available for premium students only. Please upgrade.");
+        }
+    </script>
 </body>
 </html>
