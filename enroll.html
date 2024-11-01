@@ -118,6 +118,20 @@
             background-color: darkred;
         }
 
+        footer {
+            background-color: lightslategray;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #countdown {
+            padding: 10px;
+            background-color: #fff3e0;
+            border: 2px solid #ffcc80;
+            border-radius: 5px;
+        }
+
+
         /* Responsive Styles */
         @media (max-width: 600px) {
             main {
@@ -144,6 +158,9 @@
         </div>
         <a href="dashboard.html">Course Modules</a>
     </header>
+
+    <div id="countdown"></div>
+
     <main>
         <h2>Importance of the Course</h2>
         <p>In today’s data-driven world, proficiency in tools like Excel, Power BI, and SharePoint is essential for individuals and organizations looking to thrive. This course offers a comprehensive foundation in data management and analysis, equipping participants with the skills needed to make informed decisions based on accurate data interpretation.</p>
@@ -177,5 +194,52 @@
             <button type="submit">Enroll Now</button>
         </form>
     </main>
+    <footer>
+        <p>&copy; 2024 Data Analysis Tutoring</p>
+        <nav>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const deadline = new Date("2024-12-01T23:59:59").getTime();
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = 
+                    `Enrollment ends in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "Enrollment Closed";
+            }
+        }, 1000);
+    
+        // Tooltip for Course Options
+        document.getElementById("course").addEventListener("mouseover", function(event) {
+            const tooltips = {
+                "excel": "Learn the basics of Excel for data management.",
+                "powerbi": "Get started with Power BI for data visualization.",
+                "sharepoint": "Understand SharePoint for team collaboration."
+            };
+            const tooltip = document.createElement("span");
+            tooltip.className = "tooltip";
+            tooltip.innerHTML = tooltips[event.target.value];
+            event.target.parentNode.appendChild(tooltip);
+    
+            event.target.addEventListener("mouseout", function() {
+                tooltip.remove();
+            });
+        });
+    </script>
+    
 </body>
 </html>
