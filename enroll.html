@@ -26,7 +26,12 @@
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
-            gap: 15px;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         header img {
@@ -43,10 +48,6 @@
             color: red;
             text-decoration: none;
             font-weight: bold;
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         header .home-icon {
@@ -137,8 +138,10 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><i class="fas fa-home home-icon"></i> Home</a> <!-- Home Icon Link -->
-        <img src="logo.png" alt="Business Logo">
+        <div class="left-section">
+            <a href="index.html"><i class="fas fa-home home-icon"></i></a> <!-- Home Icon Link -->
+            <img src="logo.png" alt="Business Logo">
+        </div>
         <a href="dashboard.html">Course Modules</a>
     </header>
     <main>
