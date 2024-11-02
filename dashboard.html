@@ -4,145 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             color: #333;
-            background-color: #f9f9f9;
         }
 
         header {
-            background-color: #fff;
-            padding: 15px;
+            background-color: #f0f8ff;
+            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            color: #8a6d3b;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            max-width: 900px;
-            margin: 0 auto 20px;
+            color: #006d77;
         }
 
         h1 {
-            font-size: 16px;
-            color: #8a6d3b;
+            font-size: 17px;
+            color: #006d77;
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .header-left img.logo {
-            width: 80px;
+            width: 100px;
             height: auto;
         }
 
         .header-left img.home-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
         }
 
         nav a {
-            color: #8a6d3b;
+            color: #118ab2;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
+            margin: 0 15px;
         }
 
         nav a:hover {
-            color: #71562b;
+            color: #00798c;
         }
 
-        /* Main Container */
         main {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
             padding: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color: #8a6d3b;
-            font-size: 20px;
-            margin-top: 15px;
-        }
-
-        p {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Module Styles */
         .module {
             margin: 15px 0;
-            border: 1px solid #8a6d3b;
+            border: 1px solid #118ab2;
             border-radius: 5px;
-            overflow: hidden;
         }
 
         .module-header {
-            background-color: #8a6d3b;
+            background-color: #006d77;
             color: white;
             padding: 10px;
             cursor: pointer;
-            font-size: 16px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .module-header:hover {
-            background-color: #71562b;
         }
 
         .module-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            padding: 0 10px;
-        }
-
-        .module-content.open {
-            max-height: 200px; /* Adjust as needed */
+            display: none;
             padding: 10px;
+            border-top: 1px solid #118ab2;
+            text-align: left;
         }
 
         .button {
             padding: 10px 20px;
             margin: 10px;
-            background-color: #8a6d3b;
+            background-color: #118ab2;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s;
         }
 
         .button:hover {
-            background-color: #71562b;
+            background-color: #00798c;
         }
 
-        /* Footer Styling */
         footer {
-            background-color: #8a6d3b;
+            background-color: #006d77;
             color: white;
             padding: 10px;
             text-align: center;
-            border-radius: 5px;
-            max-width: 900px;
-            margin: 20px auto 0;
         }
 
         footer nav a {
-            color: #ffefc1;
+            color: #a8dadc;
             text-decoration: none;
             margin: 0 10px;
             font-size: 14px;
@@ -150,21 +110,6 @@
 
         footer nav a:hover {
             color: white;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 600px) {
-            main {
-                padding: 15px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            .module-header {
-                font-size: 15px;
-            }
         }
     </style>
 </head>
@@ -178,11 +123,9 @@
         </div>
         <h1>Student Dashboard</h1>
     </header>
-    
     <main>
         <h2>Course Modules</h2>
-
-        <!-- Modules with collapsible content -->
+        
         <div class="module">
             <div class="module-header" onclick="toggleModule('module1')">1. Excel Basics and Data Management</div>
             <div class="module-content" id="module1">
@@ -194,8 +137,64 @@
             </div>
         </div>
 
-        <!-- Additional modules... -->
-        
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module2')">2. Advanced Excel for Data Analysis</div>
+            <div class="module-content" id="module2">
+                <ul>
+                    <li>Advanced formulas and functions (IF, VLOOKUP, INDEX, MATCH).</li>
+                    <li>Data analysis with Excel’s Analysis ToolPak.</li>
+                    <li>Creating and using pivot tables and pivot charts for data summarization.</li>
+                    <li>Introduction to Excel macros for automation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module3')">3. Power BI Fundamentals</div>
+            <div class="module-content" id="module3">
+                <ul>
+                    <li>Overview of Power BI and connecting data sources.</li>
+                    <li>Data transformation with Power Query.</li>
+                    <li>Creating visualizations and understanding data modeling.</li>
+                    <li>Building interactive dashboards.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module4')">4. Advanced Power BI & Data Visualization Techniques</div>
+            <div class="module-content" id="module4">
+                <ul>
+                    <li>DAX (Data Analysis Expressions) for calculations.</li>
+                    <li>Advanced visualizations, using Power BI’s custom visuals.</li>
+                    <li>Publishing reports and sharing dashboards.</li>
+                    <li>Data security and governance within Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module5')">5. Data Management and Collaboration with SharePoint</div>
+            <div class="module-content" id="module5">
+                <ul>
+                    <li>Overview of SharePoint for data management and document storage.</li>
+                    <li>Setting up and managing libraries, lists, and permissions.</li>
+                    <li>Integrating SharePoint with Excel and Power BI.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="module">
+            <div class="module-header" onclick="toggleModule('module6')">6. Data Collection and Forms with Microsoft Forms</div>
+            <div class="module-content" id="module6">
+                <ul>
+                    <li>Creating surveys, quizzes, and forms for data collection.</li>
+                    <li>Analyzing collected data in Excel and Power BI.</li>
+                    <li>Integrating Microsoft Forms with Power Automate for workflows.</li>
+                </ul>
+            </div>
+        </div>
+
         <h2>Tutorial Videos</h2>
         <p>Only available for Premium Students.</p>
         <ul>
@@ -203,7 +202,6 @@
             <li><a href="#" onclick="checkPremium()" class="button">Creating Dashboards in Power BI (Premium)</a></li>
         </ul>
     </main>
-
     <footer>
         <p>&copy; 2024 Data Analysis Tutoring</p>
         <nav>
@@ -215,7 +213,7 @@
     <script>
         function toggleModule(moduleId) {
             const moduleContent = document.getElementById(moduleId);
-            moduleContent.classList.toggle("open");
+            moduleContent.style.display = moduleContent.style.display === "block" ? "none" : "block";
         }
 
         function checkPremium() {
