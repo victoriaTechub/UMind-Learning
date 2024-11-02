@@ -6,14 +6,57 @@
     <title>Data Analysis Tutoring</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional Styles for Hero Section */
+        /* General Styling */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0 20px;
+            color: #333;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        nav a {
+            color: #8a6d3b;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #71562b;
+        }
+
+        /* Hero Section Styling */
         .hero {
             background-color: #ffefc1;
             color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin: 20px auto;
+            max-width: 800px;
             text-align: center;
         }
 
@@ -49,12 +92,53 @@
             color: #8a6d3b;
             margin-top: 15px;
         }
+
+        /* Main Section Styling */
+        main {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #8a6d3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #71562b;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: lightslategray;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer nav a {
+            color: #ffefc1;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer nav a:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="logo.png" alt="Logo" class="logo"> <!-- Replace with the actual path to the logo image -->
+            <img src="logo.png" alt="Logo" class="logo">
             <nav>
                 <a href="enroll.html">Student</a>
                 <a href="business_overview.html">Business</a>
@@ -68,14 +152,13 @@
             <h2>Exciting New Course Alert!</h2>
             <p>Sign up for our advanced Data Analysis course designed to boost your skills with Microsoft 365. Limited spots are available!</p>
             <a href="enroll.html" class="hero-button">Enroll Now</a>
-            <!-- Countdown Timer Display -->
             <div id="countdown" class="countdown"></div>
         </div>
 
         <!-- Main Section Content -->
         <section>
             <h2>For Corporate Businesses</h2>
-            <p>Your businesses need data analysis consultancy to effectively leverage data for strategic decisions, gain a competitive edge, and streamline operations.</p>
+            <p>Your business needs data analysis consultancy to leverage data for strategic decisions, gain a competitive edge, and streamline operations.</p>
             <div class="buttons">
                 <a href="services.html" class="button">Our Services to Businesses</a>
             </div>
@@ -92,24 +175,19 @@
 
     <!-- Countdown Timer Script -->
     <script>
-        // Set the enrollment deadline date
         const enrollmentDeadline = new Date("2024-12-31T23:59:59").getTime();
 
-        // Update the countdown every second
         const countdownFunction = setInterval(() => {
             const now = new Date().getTime();
             const distance = enrollmentDeadline - now;
 
-            // Calculate days, hours, minutes, and seconds remaining
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display the result in the countdown element
             document.getElementById("countdown").innerHTML = `Enroll in ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-            // If the countdown is over, display a message and clear the interval
             if (distance < 0) {
                 clearInterval(countdownFunction);
                 document.getElementById("countdown").innerHTML = "Enrollment closed!";
