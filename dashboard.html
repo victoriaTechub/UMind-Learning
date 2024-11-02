@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Global Styles */
         body {
@@ -88,6 +87,7 @@
             margin: 15px 0;
             border: 1px solid #8a6d3b;
             border-radius: 5px;
+            overflow: hidden;
         }
 
         .module-header {
@@ -97,15 +97,23 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .module-header:hover {
+            background-color: #71562b;
         }
 
         .module-content {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 10px;
+        }
+
+        .module-content.open {
+            max-height: 200px; /* Adjust as needed */
             padding: 10px;
-            border-top: 1px solid #8a6d3b;
-            text-align: left;
-            font-size: 15px;
-            color: #555;
         }
 
         .button {
@@ -207,7 +215,7 @@
     <script>
         function toggleModule(moduleId) {
             const moduleContent = document.getElementById(moduleId);
-            moduleContent.style.display = moduleContent.style.display === "block" ? "none" : "block";
+            moduleContent.classList.toggle("open");
         }
 
         function checkPremium() {
