@@ -5,131 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Portal</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #2f4f4f;
-            background-color: #f4f9fd;
+            color: #333;
+            background-color: white; /* Primary background color */
+            box-sizing: border-box;
         }
 
         header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            background-color: #fff;
-            padding: 8px;
-            color: #e9ecef;
             justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            color: #8a6d3b; /* Dark brown color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        header h1 {
-            margin: 0;
-            font-size: 16px;
-            color: #e9ecef;
+
+        .header-container {
+            width: 100%;
+            max-width: 1200px; /* Same max-width as landing page */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
         }
 
         nav a {
-            color: #e9ecef;
+            color: #8a6d3b; /* Dark brown for links */
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
+        nav a:hover {
+            color: #71562b; /* Darker shade on hover */
+        }
+
+        /* Main Content */
         main {
             text-align: center;
             padding: 20px;
-            max-width: 700px;
-            margin: 0 auto;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1200px; /* Same max-width as landing page */
+            margin: 0 auto; /* Center align the content */
         }
 
         h2 {
-            color: #005f73;
-            font-size: 20px;
+            color: #8a6d3b;
         }
 
         .button {
-            padding: 8px 18px;
-            margin: 12px;
-            background-color: #005f73;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #8a6d3b;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 14px;
         }
 
-        .button:hover {
-            background-color: #0a9396;
-        }
-
-        footer {
-            background-color: #005f73;
-            color: #e9ecef;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-
+        /* Importance Section */
         .importance {
             margin-top: 20px;
-            padding: 15px;
-            background-color: #e9f6fa;
-            border: 1px solid #0a9396;
+            padding: 20px;
+            background-color: #ffefc1; /* Light yellow background */
+            border: 1px solid #ccc;
             border-radius: 5px;
             text-align: left;
-            font-size: 14px;
-            color: #343a40;
+            color: #333;
         }
 
         .importance h3 {
-            color: #005f73;
-            font-size: 16px;
+            color: #8a6d3b;
         }
 
-        .importance ul {
-            padding-left: 20px;
-        }
-
-        .importance li {
-            margin-bottom: 8px;
+        footer {
+            background-color: #8a6d3b;
+            color: white;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <div style="display: flex; align-items: center;">
-            <img src="logo.png" alt="Business Portal Logo" style="width: 90px; height: auto; margin-right: 20px;">
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <a href="index.html" style="text-decoration: none;">
-                <img src="home.png" alt="Home Icon" style="width: 45px; height: 45px;">
-            </a>
+        <div class="header-container">
+            <img src="logo.png" alt="Business Portal Logo" class="logo">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="home.png" alt="Home Icon" style="width: 50px; height: 50px;"> <!-- Home icon -->
+                </a>
+                <h1 style="margin: 0; font-size: 18px;">Business Portal</h1>
+            </div>
         </div>
     </header>    
-        
+    
     <main>
-        <h2>Data Analysis Services for Small Businesses</h2>
-        <p>We offer tailored training and data analysis workshops to help your business succeed.</p>
-        <p><a href="contact_form.html" class="button">Request a Consultation</a></p>
-        
-        <div class="importance">
-            <h3>Importance of Consultation for Data Tools Training</h3>
-            <p>
-                In today's fast-paced, data-driven business landscape, companies must harness the power of data to maintain a competitive edge. Consultation in data tools training—such as Excel, Power BI, and SharePoint—offers significant advantages for businesses looking to enhance their data management capabilities.
-            </p>
-            <ul>
-                <li><strong>Tailored Solutions:</strong> Expert consultants can assess an organization's specific needs, recommending tailored training programs that align with business objectives and employee skill levels, ensuring optimal learning outcomes.</li>
-                <li><strong>Increased Efficiency:</strong> By identifying gaps in current processes and training, consultants can streamline workflows, leading to improved efficiency and productivity within teams.</li>
-                <li><strong>Data-Driven Culture:</strong> Consultation fosters a culture of data literacy, empowering employees to leverage data for decision-making, ultimately leading to more informed strategies and better business outcomes.</li>
-                <li><strong>Cost-Effectiveness:</strong> Investing in consultation can save businesses time and resources by preventing common pitfalls and ensuring employees receive training that translates directly into their roles.</li>
-                <li><strong>Sustained Growth:</strong> As companies grow and evolve, ongoing consultation can provide continuous learning opportunities, helping teams stay current with the latest tools and best practices in data management.</li>
-            </ul>
-            <p>
-                In summary, businesses that prioritize consultation for data tools training position themselves for success in an increasingly competitive environment, equipping their workforce with essential skills to navigate the complexities of data analysis and visualization effectively.
-            </p>
+        <div class="main-container">
+            <h2>Data Analysis Services for Small Businesses</h2>
+            <p>We offer tailored training and data analysis workshops to help your business succeed.</p>
+            <p><a href="contact_form.html" class="button">Request a Consultation</a></p>
+            
+            <div class="importance">
+                <h3>Importance of Consultation for Data Tools Training</h3>
+                <p>
+                    In today's fast-paced, data-driven business landscape, companies must harness the power of data to maintain a competitive edge. Consultation in data tools training—such as Excel, Power BI, and SharePoint—offers significant advantages for businesses looking to enhance their data management capabilities.
+                </p>
+                <ul>
+                    <li><strong>Tailored Solutions:</strong> Expert consultants can assess an organization's specific needs, recommending tailored training programs that align with business objectives and employee skill levels, ensuring optimal learning outcomes.</li>
+                    <li><strong>Increased Efficiency:</strong> By identifying gaps in current processes and training, consultants can streamline workflows, leading to improved efficiency and productivity within teams.</li>
+                    <li><strong>Data-Driven Culture:</strong> Consultation fosters a culture of data literacy, empowering employees to leverage data for decision-making, ultimately leading to more informed strategies and better business outcomes.</li>
+                    <li><strong>Cost-Effectiveness:</strong> Investing in consultation can save businesses time and resources by preventing common pitfalls and ensuring employees receive training that translates directly into their roles.</li>
+                    <li><strong>Sustained Growth:</strong> As companies grow and evolve, ongoing consultation can provide continuous learning opportunities, helping teams stay current with the latest tools and best practices in data management.</li>
+                </ul>
+                <p>
+                    In summary, businesses that prioritize consultation for data tools training position themselves for success in an increasingly competitive environment, equipping their workforce with essential skills to navigate the complexities of data analysis and visualization effectively.
+                </p>
+            </div>
         </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Business Portal. All rights reserved.</p>
     </footer>
