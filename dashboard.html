@@ -6,25 +6,29 @@
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Base styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f8f8f8; /* Light gray background */
             color: #333;
         }
 
+        /* Header styling */
         header {
-            background-color: #f0f8ff;
+            background-color: #ffffff;
             padding: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            color: #006d77;
+            color: #6a1b9a; /* Soft purple for main header */
+            border-bottom: 2px solid #e0e0e0;
         }
 
         h1 {
             font-size: 17px;
-            color: #006d77;
+            color: #6a1b9a;
         }
 
         .header-left {
@@ -44,15 +48,13 @@
         }
 
         nav a {
-            color: #118ab2;
+            color: #b71c1c; /* Deeper red for nav links */
             text-decoration: none;
             margin: 0 15px;
+            font-weight: bold;
         }
 
-        nav a:hover {
-            color: #00798c;
-        }
-
+        /* Main container */
         main {
             max-width: 800px;
             margin: 0 auto;
@@ -60,56 +62,50 @@
             padding: 20px;
         }
 
+        /* Module styling */
         .module {
             margin: 15px 0;
-            border: 1px solid #118ab2;
+            border: 1px solid #b71c1c; /* Deeper red border */
             border-radius: 5px;
         }
 
         .module-header {
-            background-color: #006d77;
+            background-color: #6a1b9a; /* Soft purple background */
             color: white;
             padding: 10px;
-            cursor: pointer;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .module-content {
             display: none;
             padding: 10px;
-            border-top: 1px solid #118ab2;
+            border-top: 1px solid #b71c1c;
+            background-color: #ffffff;
             text-align: left;
         }
 
+        /* Button styling */
         .button {
             padding: 10px 20px;
             margin: 10px;
-            background-color: #118ab2;
+            background-color: #b71c1c; /* Deeper red */
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .button:hover {
-            background-color: #00798c;
+            background-color: #a31515; /* Darker shade for hover effect */
         }
 
+        /* Footer styling */
         footer {
-            background-color: #006d77;
+            background-color: #333;
             color: white;
             padding: 10px;
             text-align: center;
-        }
-
-        footer nav a {
-            color: #a8dadc;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 14px;
-        }
-
-        footer nav a:hover {
-            color: white;
         }
     </style>
 </head>
@@ -148,7 +144,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="module">
             <div class="module-header" onclick="toggleModule('module3')">3. Power BI Fundamentals</div>
             <div class="module-content" id="module3">
@@ -195,20 +190,15 @@
             </div>
         </div>
 
+        <!-- Additional modules here -->
+
         <h2>Tutorial Videos</h2>
         <p>Only available for Premium Students.</p>
         <ul>
-            <li><a href="#" onclick="checkPremium()" class="button">Excel Functions and Formulas (Premium)</a></li>
-            <li><a href="#" onclick="checkPremium()" class="button">Creating Dashboards in Power BI (Premium)</a></li>
+            <li><a href="#" onclick="checkPremium()">Excel Functions and Formulas (Premium)</a></li>
+            <li><a href="#" onclick="checkPremium()">Creating Dashboards in Power BI (Premium)</a></li>
         </ul>
     </main>
-    <footer>
-        <p>&copy; 2024 Data Analysis Tutoring</p>
-        <nav>
-            <a href="privacy_policy.html">Privacy Policy</a>
-            <a href="terms_of_service.html">Terms of Service</a>
-        </nav>
-    </footer>
 
     <script>
         function toggleModule(moduleId) {
